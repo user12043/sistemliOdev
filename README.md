@@ -1,0 +1,2 @@
+# sistemliOdev
+Sistem programlama ödevi

@@ -1,10 +1,10 @@
 //
-// Created by user12043 on 31.03.2019.
+// Created by user12043 on 04.04.2019.
 //
 
-#ifndef SISTEMLIODEV_PROCESSPARAMS_H
-#define SISTEMLIODEV_PROCESSPARAMS_H
+#ifndef SISTEMLIODEV_PARAMETREISLE_H
+#define SISTEMLIODEV_PARAMETREISLE_H
 
-void parametreIsle(char **arguments, int argCount);
+extern void parametreIsle(char **arguments, int argCount);
 
-#endif //SISTEMLIODEV_PROCESSPARAMS_H
+#endif //SISTEMLIODEV_PARAMETREISLE_H

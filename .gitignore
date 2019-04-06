@@ -129,3 +129,8 @@ fabric.properties
 # Debug files
 
 # Kernel Module Compile Results
+
+# CUSTOM ENTRIES START
+#executable files
+bin
+# CUSTOM ENTRIES START

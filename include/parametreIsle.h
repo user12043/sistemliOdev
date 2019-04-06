@@ -5,6 +5,8 @@
 #ifndef SISTEMLIODEV_PARAMETREISLE_H
 #define SISTEMLIODEV_PARAMETREISLE_H
 
-extern void parametreIsle(char **arguments, int argCount);
+void hataliParametre(char *argument, char *hataliParametre);
+
+void parametreIsle(int argCount, char **arguments);
 
 #endif //SISTEMLIODEV_PARAMETREISLE_H

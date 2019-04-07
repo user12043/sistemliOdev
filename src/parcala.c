@@ -3,3 +3,8 @@
 //
 
 #include <parcala.h>
+#include <stdio.h>
+
+void parcala(char *archiveFile, char *outputFolder) {
+    printf("%s\n", "parcalanacak");
+}

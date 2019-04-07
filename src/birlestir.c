@@ -3,3 +3,8 @@
 //
 
 #include <birlestir.h>
+#include <stdio.h>
+
+void birlestir(char **arguments, int oIndis) {
+    printf("%s\n", "birlestirilecek");
+}

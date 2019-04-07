@@ -6,6 +6,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdbool.h>
+#include <birlestir.h>
+#include <parcala.h>
 
 void hataliParametre(char *argument, char *hataliParametre) {
     if (hataliParametre != NULL) {
@@ -23,9 +26,31 @@ void parametreIsle(int argCount, char **arguments) {
     if (argCount < 2) {
         hataliParametre(arguments[0], NULL);
     } else if (strcmp(arguments[1], "-b") == 0) {
-        // TODO birlestir
+        // -o parametresine bak
+        bool oVar = false;
+        int oIndis = -1; // -o parametresinin indisini tutacak
+        for (int i = 1; i < argCount; ++i) {
+            if (strcmp(arguments[i], "-o") == 0) {
+                oVar = true; // varsa true
+                oIndis = i;
+            }
+        }
+        // -o parametresi yoksa veya sonrası boşsa hata ver
+        if (!oVar || oIndis == (argCount - 1)) {
+            hataliParametre(arguments[0], NULL);
+        }
+
+        // hata yok devam et
+        birlestir(arguments, oIndis);
     } else if (strcmp(arguments[1], "-a") == 0) {
-        // TODO parcala
+        // -a dan sonra 2 argument daha yoksa hata ver
+        if (argCount < 4) {
+            hataliParametre(arguments[0], NULL);
+        }
+
+
+        // hata yok devam et
+        parcala(arguments[2], arguments[3]);
     } else {
         hataliParametre(arguments[0], arguments[1]);
     }

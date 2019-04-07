@@ -5,4 +5,6 @@
 #ifndef SISTEMLIODEV_PARCALA_H
 #define SISTEMLIODEV_PARCALA_H
 
+void parcala(char *archiveFile, char *outputFolder);
+
 #endif //SISTEMLIODEV_PARCALA_H

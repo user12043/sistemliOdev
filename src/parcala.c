@@ -8,17 +8,21 @@
 #include "unistd.h"
 #include "string.h"
 #include "sys/stat.h"
+#include "dirent.h"
+#include "errno.h"
 
 void parcala(char *archiveFile, char *outputFolder) {
- 
-  // char * home = getenv("HOME");
-//printf("home_path=%s\n",home);
 
-//char * filepath = "arsiv.sau";
-//char * pt;
-   //pt = realpath(filepath,NULL);
-    //printf("real_path:%s\n",pt);
+     char output[200]="";
     
+        DIR *output_dir = opendir(outputFolder);
+        if (output_dir == NULL) {
+            mkdir(outputFolder, 0644);
+        }
+        strcat(output, outputFolder);
+        strcat(output, "/");
+    
+
     
     fp = fopen(archiveFile, "r");
 
@@ -106,10 +110,18 @@ void parcala(char *archiveFile, char *outputFolder) {
     
     sizes[i] = atoi(files[i].size);
     permisions[i]=strtol(files[i].permissions,NULL,8);
+
+
+    strcpy(fullpath,output);
+    strcat(fullpath,files[i].name);
+
+    fp2 = open(fullpath,O_CREAT | O_WRONLY | O_TRUNC,permisions[i]);
     
-  //  printf(" permission = %d \n",permisions[i]);
-    
-    fp2 = open(files[i].name,O_CREAT | O_WRONLY | O_TRUNC,permisions[i]);
+    if (fp < 0)
+    {
+       fprintf(stderr, "Error: %s", strerror(errno));
+        exit(1);
+    }
     write(fp2,files[i].text,sizes[i]);
     
 

@@ -33,12 +33,20 @@ void birlestir(char **arguments, int oIndis) {
     }
     Girdiler g;
     int i;
+    size_t toplamBoyut = 0;
     for (i = 0; i + 2 < oIndis; ++i) {
         g.dosya_isimleri[i] = arguments[i + 2];
         struct stat s;
         stat(arguments[i + 2], &s);
         g.dosya_boyutlari[i] = s.st_size;
+        toplamBoyut += s.st_size;
         g.dosya_izinleri[i] = s.st_mode & (S_IRWXU | S_IRWXG | S_IRWXO);
+    }
+
+    // toplam boyutu kontrol et
+    if (toplamBoyut > SIZE_LIMIT) {
+        fprintf(stderr, "input files must be under %lu bytes in total!", toplamBoyut);
+        exit(1);
     }
 
     // cikti dosyasini ac
@@ -72,8 +80,15 @@ void birlestir(char **arguments, int oIndis) {
         char ch;
         for (int j = 0; j < g.dosya_boyutlari[k]; ++j) {
             fread(&ch, 1, 1, dosya);
+            // ascii araligini kontrol et
+            if (ch < 0 || ch > 127) {
+                // binary dosya olabilir
+                fprintf(stderr, "invalid file: %s", g.dosya_isimleri[k]);
+                exit(1);
+            }
             fwrite(&ch, 1, 1, cikis);
         }
+        fclose(dosya);
     }
     fclose(cikis);
 }

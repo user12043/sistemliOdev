@@ -5,17 +5,17 @@
 #ifndef SISTEMLIODEV_PARCALA_H
 #define SISTEMLIODEV_PARCALA_H
 
-#include "stdlib.h"
-#include "stdio.h"
+#include <stdlib.h>
+#include <stdio.h>
 
 #define BUFFERSIZE 6553600 + 500 //32 file * 200 mb + first part approximately
 
-FILE *fp;//file pointer for arshive file
+FILE *fp;//file pointer for archive file
 char buffer[BUFFERSIZE]; //the buffer for archive file
 int fp2; // file pointer for extracting files
 int sizes[204800];//file sizes integer max 200 mb
 int permisions[5];//permissions octal array 
-char fullpath[250] = "";
+char fullpath[250];
 struct file {
     char name[100];
     char permissions[5];

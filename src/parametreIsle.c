@@ -27,20 +27,26 @@ void parametreIsle(int argCount, char **arguments) {
         hataliParametre(arguments[0], NULL);
     } else if (strcmp(arguments[1], "-b") == 0) {
         // -o parametresine bak
-        bool oVar = false;
         int oIndis = -1; // -o parametresinin indisini tutacak
         for (int i = 1; i < argCount; ++i) {
             if (strcmp(arguments[i], "-o") == 0) {
-                oVar = true; // varsa true
                 oIndis = i;
+                break;
             }
         }
-        // -o parametresi yoksa veya sonrası boşsa hata ver
-        if (!oVar || oIndis == (argCount - 1)) {
+
+        // -o dan sonrası bossa yine -1 ver
+        if (argCount - 1 == oIndis) {
+            oIndis = -1;
+            argCount--; // parametre sayisini azalt
+        }
+
+        if ((oIndis == -1 && argCount > (MAX_INPUT_FILE + 2))
+            || (oIndis != -1 && argCount > (MAX_INPUT_FILE + 4))) {
+            fprintf(stderr, "Max %d input file allowed!\n", MAX_INPUT_FILE);
             hataliParametre(arguments[0], NULL);
         }
 
-        // hata yok devam et
         birlestir(arguments, oIndis);
     } else if (strcmp(arguments[1], "-a") == 0) {
         // -a dan sonra 2 argument daha yoksa hata ver

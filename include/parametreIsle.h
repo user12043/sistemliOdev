@@ -5,6 +5,8 @@
 #ifndef SISTEMLIODEV_PARAMETREISLE_H
 #define SISTEMLIODEV_PARAMETREISLE_H
 
+#define MAX_INPUT_FILE 32 // giris dosyasi limiti
+
 void hataliParametre(char *argument, char *hataliParametre);
 
 void parametreIsle(int argCount, char **arguments);

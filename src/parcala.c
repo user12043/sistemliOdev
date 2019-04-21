@@ -3,13 +3,13 @@
 
 #include <parcala.h>
 #include <stdio.h>
-#include "stdlib.h"
-#include "fcntl.h"
-#include "unistd.h"
-#include "string.h"
-#include "sys/stat.h"
-#include "dirent.h"
-#include "errno.h"
+#include <stdlib.h>
+#include <fcntl.h>
+#include <unistd.h>
+#include <string.h>
+#include <sys/stat.h>
+#include <dirent.h>
+#include <errno.h>
 
 void parcala(char *archiveFile, char *outputFolder) {
 
@@ -42,10 +42,8 @@ void parcala(char *archiveFile, char *outputFolder) {
     //printf("%d", descSize);
 
     int partIndex = 0;
-    int i = 11;
     int fileCount = 0;
     int descCursor = 11;
-    int textCursor = descSize;
     int objIndex = 0;
     //birinci bölüm | nesnelere atama 
     for (int i = 11; i < descSize; i++) {

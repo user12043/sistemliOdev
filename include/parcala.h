@@ -15,7 +15,7 @@ char buffer[BUFFERSIZE]; //the buffer for archive file
 int fp2; // file pointer for extracting files
 int sizes[204800];//file sizes integer max 200 mb
 int permisions[5];//permissions octal array 
-char fullpath[250];
+char fullpath[250]="";
 struct file {
     char name[100];
     char permissions[5];

@@ -47,7 +47,7 @@ void parametreIsle(int argCount, char **arguments) {
             hataliParametre(arguments[0], NULL);
         }
 
-        birlestir(arguments, oIndis);
+        birlestir(arguments, (oIndis == -1) ? argCount : oIndis);
     } else if (strcmp(arguments[1], "-a") == 0) {
         // -a dan sonra 2 argument daha yoksa hata ver
         if (argCount < 4) {

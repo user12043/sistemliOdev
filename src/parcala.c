@@ -18,7 +18,7 @@ void parcala(char *archiveFile, char *outputFolder) {
 
     DIR *output_dir = opendir(outputFolder);
     if (output_dir == NULL) {
-        mkdir(outputFolder, 0644);
+        mkdir(outputFolder, 0752);
     }
     strcat(output, outputFolder);
     strcat(output, "/");

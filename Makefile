@@ -32,4 +32,4 @@ parametreIsle:
 
 
 clean:
-	rm $(lib)/* $(bin)/*
+	rm -rf $(lib)/* $(bin)/*

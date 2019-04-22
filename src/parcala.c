@@ -14,6 +14,7 @@
 void parcala(char *archiveFile, char *outputFolder) {
 
     char output[200] = "";
+    char fullpath[250] = "";
 
     DIR *output_dir = opendir(outputFolder);
     if (output_dir == NULL) {
@@ -85,8 +86,7 @@ void parcala(char *archiveFile, char *outputFolder) {
     }
 
     int sayac = descSize;
-    for (int i = 0; i < fileCount; i++) //text selection part
-    {
+    for (int i = 0; i < fileCount; i++) { //text selection part
         for (int j = 0; j < atoi(files[i].size); j++) {
             files[i].text[j] = buffer[j + sayac];
         }

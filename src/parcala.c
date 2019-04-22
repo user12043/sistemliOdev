@@ -22,7 +22,10 @@ void parcala(char *archiveFile, char *outputFolder) {
     }
     strcat(output, outputFolder);
     strcat(output, "/");
-
+    if (strcmp(".sau", &archiveFile[strlen(archiveFile) - 4]) != 0) {
+        fprintf(stderr, "archive file \"%s\" must be .sau file!\n", archiveFile);
+        exit(1);
+    }
 
     fp = fopen(archiveFile, "r");
 

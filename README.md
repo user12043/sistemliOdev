@@ -29,8 +29,9 @@ Sistem programlama ödevi [github repository](https://github.com/user12043/siste
 
 
 ### Projenin çalışma şekli ve yapılanlar
+Proje dökümanda istenen tüm isterleri içermektedir.
 
-Proje makefile ile derlendikten sonra çalıştırılabilir dosya bin dizininde oluşur(tarsau). Arşivlenmesi istenen dosyalar parametre olarak verildikten sonra .sau uzantılı arşiv dosyası oluşturulur. Parametrelerin hangi sırada verileceği parametreIsle.c dosyası içerisinde kontrol edilip kullanıcı için bir yönlendirme yapılmıştır. e.g
+Proje makefile ile derlendikten sonra çalıştırılabilir dosya `bin` dizininde oluşur.(tarsau). Arşivlenmesi istenen dosyalar parametre olarak verildikten sonra .sau uzantılı arşiv dosyası oluşturulur. Parametrelerin hangi sırada verileceği parametreIsle.c dosyası içerisinde kontrol edilip kullanıcı için bir yönlendirme yapılmıştır. e.g
 
         noaahhh@noaahhh-pc sistemliOdev]$ ./bin/tarsau
         usage:

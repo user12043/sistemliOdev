@@ -27,7 +27,7 @@ Nuh-> Dosyalar oluşturulacak ve içerikleri yazılacak, izinleri ayarlanacak
 -> Nuh YURDUSEVEN 161210018
 
 
-##Projenin çalışma şekli ve yapılanlar
+### Projenin çalışma şekli ve yapılanlar
 
 Proje makefile ile derlendikten sonra çalıştırılabilir dosya bin dizininde oluşur(tarsau). Arşivlenmesi istenen dosyalar parametre olarak verildikten sonra .sau uzantılı arşiv dosyası oluşturulur. Parametrelerin hangi sırada verileceği parametreIsle.c dosyası içerisinde kontrol edilip kullanıcı için bir yönlendirme yapılmıştır. e.g
 

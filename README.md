@@ -18,16 +18,6 @@ Sistem programlama ödevi [github repository](https://github.com/user12043/siste
 
 - Nuh: Dosyalar oluşturulacak ve içerikleri yazılacak, izinleri ayarlanacak
 
-  
-### Projede Görev Alanlar
-
-- Muaz KARATAŞ B161210039
-- Mikail Yusuf KARADENİZ B161210105
-- İbrahim KUBALAS B161210370
-- Yusuf Taha ÖZTÜRK B151210036
-- Nuh YURDUSEVEN B161210018
-
-
 ### Projenin çalışma şekli ve yapılanlar
 Proje dökümanda istenen tüm isterleri içermektedir.
 
